@@ -1,14 +1,23 @@
 # sql-data-warehouse-project
+---------------------------------------------------
+
+👋 Welcome to my GitHub!
+
+Hi, I’m Chandra — a data enthusiast with a strong interest in data engineering, analytics, and modern data warehouse solutions. This repository highlights my first end-to-end data project, where I designed and implemented a layered data warehouse architecture that transforms raw operational data into meaningful, business-ready insights.
+
+In this project, I applied industry best practices across data ingestion, data transformation, dimensional modeling, and analytical reporting. My focus is on building scalable, reliable data solutions that empower data-driven decision-making.
+
+Thank you for visiting my work. I’m continuously learning, exploring new technologies, and improving my skills in the data domain 🚀
 
 
 # Project Requirements 
--------------------------------------------------------------------------
+-------------------------------------------------
 # Project Objective
 The objective of this project is to design and implement a modern, layered data warehouse architecture that converts raw operational data into high-quality, business-ready analytical datasets. The solution follows industry best practices across data ingestion, transformation, dimensional modeling, and analytical consumption.
 
 This project demonstrates an end-to-end data pipeline that supports reliable reporting, advanced analytics, and scalable, data-driven decision-making. By structuring data through well-defined layers, the architecture ensures data consistency, performance optimization, and long-term maintainability for enterprise analytics use cases.
 
-------
+-------------------------------------------------
 
 # Specifications
 Data Sources: Import data from two source system (ERP and CRM) provided as CSV files.
@@ -17,7 +26,7 @@ Integration: Combine both sources into a single, user friendly data model design
 Scope: Focus on the latest datasets only; historization of data is not required. 
 Documentation: Provide clear documentation of the data model to support both business stake holders and Analytics teams.
 
-------
+--------------------------------------------------
 
 ### BI: Analytics and reporting (Data Analytics) 
 ## Objective 
@@ -28,7 +37,7 @@ To develop a SQL based analytics to deliver detailed insights into:
 
 These insights empower stakeholders with key business metrics, enabling strategic decision- making.
 
------
+--------------------------------------------------
 
 **License**
 This project is licensed under the [MIT License]. you are free to  use, modify and share the project with proper attribution.
