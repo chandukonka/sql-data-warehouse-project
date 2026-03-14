@@ -3,40 +3,46 @@
 DDL SCRIPT: CREATE BRONZE LAYER
 ====================================================================================
 Script Purpose:
-    This script creates tables in the 'bronze' schema, dropping exisiting tables.
-    if they already exists.
+    This script creates tables in the 'bronze' schema, dropping existing tables
+    if they already exist.
     Run this script to re-define the DDL structure of bronze tables.
-=====================================================================================    
+====================================================================================
 */
 
+-- CRM CUSTOMER INFO
+DROP TABLE IF EXISTS bronze.crm_cust_info;
+
+CREATE TABLE bronze.crm_cust_info (
+  cst_id              INT,
+  cst_key             VARCHAR(50),
+  cst_firstname       VARCHAR(50),
+  cst_lastname        VARCHAR(50),
+  cst_marital_status  VARCHAR(50),
+  cst_gndr            VARCHAR(50),
+  cst_create_date     TIMESTAMP
+);
 
 
-Drop table if exists bronze.crm_cust_info;
-  CREATE TABLE bronze.crm_cust_info (
-  cst_id               INT,
-  cst_key              NVARCHAR(50),
-  cst_firstname        NVARCHAR(50),
-  cst_lastname         NVARCHAR(50),
-  cst_material_status  NVARCHAR(50),
-  cst_gndr             NVARCHAR(50),
-  cst_create_date      TIMESTAMP
-  );
+-- CRM PRODUCT INFO
+DROP TABLE IF EXISTS bronze.crm_prd_info;
 
-Drop table if exists bronze.crm_prd_info;
- CREATE TABLE bronze.crm_prd_info (
+CREATE TABLE bronze.crm_prd_info (
   prd_id INT,
-  prd_key      NVARCHAR(50),
-  prd_nm       NVARCHAR(50),
+  prd_key      VARCHAR(50),
+  prd_nm       VARCHAR(50),
   prd_cost     INT,
-  prd_line     NVARCHAR(50),
+  prd_line     VARCHAR(50),
   prd_start_dt TIMESTAMP,
   prd_end_dt   TIMESTAMP
-  );
+);
 
-Drop table if exists bronze.crm_sales_details;
- CREATE TABLE bronze.crm_sales_details(
-  sls_ord_num  NVARCHAR(50),
-  sls_prd_key  NVARCHAR(50),
+
+-- CRM SALES DETAILS
+DROP TABLE IF EXISTS bronze.crm_sales_details;
+
+CREATE TABLE bronze.crm_sales_details (
+  sls_ord_num  VARCHAR(50),
+  sls_prd_key  VARCHAR(50),
   sls_cust_id  INT,
   sls_order_dt INT,
   sls_ship_dt  INT,
@@ -44,27 +50,34 @@ Drop table if exists bronze.crm_sales_details;
   sls_sales    INT,
   sls_quantity INT,
   sls_price    INT
-  );
-
-Drop table if exists bronze.erp_loc_a101;
-  create table bronze.erp_loc_a101 (
-  cid   NVARCHAR(50),
-  cntry NVARCHAR(50) 
-  );
-
-Drop table if exists bronze.erp_cust_az12;
-  create table bronze.erp_cust_az12 (
-  cid    NVARCHAR(50),
-  bdate  TIMESTAMP,
-  gen    NVARCHAR(50)
-  );
-
-Drop table if exists bronze.erp_px_cat_g1v2;
-  create table bronze.erp_px_cat_g1v2 (
-  id          NVARCHAR(50),
-  cat         NVARCHAR(50),
-  subcat      NVARCHAR(50),
-  maintenance NVARCHAR(50)
 );
-  
-  
+
+
+-- ERP LOCATION TABLE
+DROP TABLE IF EXISTS bronze.erp_loc_a101;
+
+CREATE TABLE bronze.erp_loc_a101 (
+  cid   VARCHAR(50),
+  cntry VARCHAR(50)
+);
+
+
+-- ERP CUSTOMER TABLE
+DROP TABLE IF EXISTS bronze.erp_cust_az12;
+
+CREATE TABLE bronze.erp_cust_az12 (
+  cid    VARCHAR(50),
+  bdate  TIMESTAMP,
+  gen    VARCHAR(50)
+);
+
+
+-- ERP PRODUCT CATEGORY
+DROP TABLE IF EXISTS bronze.erp_px_cat_g1v2;
+
+CREATE TABLE bronze.erp_px_cat_g1v2 (
+  id          VARCHAR(50),
+  cat         VARCHAR(50),
+  subcat      VARCHAR(50),
+  maintenance VARCHAR(50)
+);
